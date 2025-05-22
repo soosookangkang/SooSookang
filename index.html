@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>수수깡의 노래책</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body { margin: 0; background: #111; color: white; font-family: sans-serif; }
+    .header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: black; }
+    .sidebar-toggle i { font-size: 24px; cursor: pointer; color: white; }
+    .sidebar { display: none; background: #222; padding: 20px; }
+    .sidebar.open { display: block; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title">수수깡의 노래책</div>
+    <div class="sidebar-toggle" onclick="toggleSidebar()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+  <div class="sidebar">
+    <p>이곳은 메뉴입니다.</p>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.querySelector(".sidebar");
+      const icon = document.querySelector(".sidebar-toggle i");
+
+      sidebar.classList.toggle("open");
+
+      if (sidebar.classList.contains("open")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-times");
+      } else {
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+      }
+    }
+  </script>
+</body>
+</html>
